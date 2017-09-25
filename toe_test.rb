@@ -34,7 +34,14 @@ def test_valid_move_1
     player = "o"
     choice = 2
     assert_equal("invalid move", validmove(board,player,choice))
-end     
+end 
+
+def test_valid_move_2
+    board = ["1","x","3","o","5","6","7","x","9"]
+    player = "x"
+    choice = 1
+    assert_equal("valid move", validmove(board,player,choice))
+end 
 
 
 
