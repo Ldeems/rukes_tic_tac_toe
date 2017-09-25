@@ -25,4 +25,15 @@ def playerchange(player)
     else
         player = "x"
     end
-end         
+end
+
+def validmove(board,player,choice)
+    if board[choice - 1] == "x"
+       move =  "invalid move"
+    elsif board[choice - 1] == "o"
+        move = "invalid move"
+    else
+        move = "valid move"
+    end            
+   move
+end    
