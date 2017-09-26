@@ -38,14 +38,27 @@ def validmove(board,player,choice)
    move
 end 
 
-def winner(board,player,choice)
-     counter = 0
-     if board[0] + board[1] == board[2] + board[2]
-         message = "#{player} is the winner"
-     else
-        message = "still no winner"
-     end
-#p board[0] + board[1]
-  message           
-
-end    
+def winner(board)
+    answer = []
+    count = 0
+    #p "#{board[count]} + #{board[4]} and #{board[((count%3)*2)+7]} + #{board[((count%3)*2)+7]}"
+    until count == 9 do
+        if board[count] + "," + board[count+1] == board[count+2] + "," +  board[count+2]
+                answer << true
+         else
+            if board[(count/3)] + "," + board[(count/3) + 3] == board[(count/3) +6] + "," + board[(count/3) + 6]
+                answer << true
+            else
+                if board[count] + "," + board[4] == board[((count%3)*2)+7] + "," + board[((count%3)*2)+7]    
+                    answer << true
+                else
+                    answer << false
+                end        
+            end    
+       end
+        count += 3
+    end
+           
+   youwin = answer.include?(true)
+   youwin
+end
