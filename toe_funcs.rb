@@ -44,21 +44,24 @@ def winner(board)
     #p "#{board[count]} + #{board[4]} and #{board[((count%3)*2)+7]} + #{board[((count%3)*2)+7]}"
     until count == 9 do
         if board[count] + "," + board[count+1] == board[count+2] + "," +  board[count+2]
-                answer << true
+                answer << "true1"
          else
             if board[(count/3)] + "," + board[(count/3) + 3] == board[(count/3) +6] + "," + board[(count/3) + 6]
-                answer << true
-            else
-                if board[count] + "," + board[4] == board[((count%3)*2)+7] + "," + board[((count%3)*2)+7]    
-                    answer << true
-                else
+                answer << "true2"
+            else  
+                if count == 6
                     answer << false
-                end        
+                else   
+                    if board[(count*2)/3] + "," + board[4] == board[((count*2)/-3)+8] + "," + board[((count*2)/-3)+8]    
+                        answer << true
+                    else
+                        answer << false
+                    end
+                end            
             end    
        end
         count += 3
-    end
-           
+    end    
    youwin = answer.include?(true)
    youwin
 end
