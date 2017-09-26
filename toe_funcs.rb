@@ -36,4 +36,16 @@ def validmove(board,player,choice)
         move = "valid move"
     end            
    move
+end 
+
+def winner(board,player,choice)
+     counter = 0
+     if board[0] + board[1] == board[2] + board[2]
+         message = "#{player} is the winner"
+     else
+        message = "still no winner"
+     end
+#p board[0] + board[1]
+  message           
+
 end    

@@ -43,6 +43,13 @@ def test_valid_move_2
     assert_equal("valid move", validmove(board,player,choice))
 end 
 
+def test_winnig_1
+    board = ["x","x","x","o","5","o","7","x","o"]
+    player = "x"
+    choice = 1
+    assert_equal("x is the winner", winner(board,player,choice))
+end 
+
 
 
 
