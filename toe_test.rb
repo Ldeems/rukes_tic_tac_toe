@@ -43,12 +43,12 @@ class Toe_test < Minitest::Test
 #     assert_equal("valid move", validmove(board,player,choice))
 # end 
 
-# def test_no_win
-#     board = ["x","2","x","o","5","o","7","x","o"]
-#     player = "x"
-#     choice = 1
-#     assert_equal(false, winner(board))
-# end 
+def test_no_win
+    board = ["x","2","x","o","5","o","7","x","o"]
+    player = "x"
+    choice = 1
+    assert_equal(false, winner(board))
+end 
 
 def test_winnig_1
     board = ["x","x","x","o","5","o","7","x","o"]
@@ -69,6 +69,20 @@ def test_winnig_3
     player = "x"
     choice = 9
     assert_equal(false, winner(board))
+end
+
+def test_winnig_4
+    board = ["o","2","x","4","o","x","7","x","o"]
+    player = "o"
+    choice = 5
+    assert_equal(true, winner(board))
+end
+
+def test_winnig_5
+    board = ["1","2","x","o","x","6","x","o","9"]
+    player = "x"
+    choice = 9
+    assert_equal(true, winner(board))
 end
 
 
