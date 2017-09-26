@@ -65,3 +65,20 @@ def winner(board)
    youwin = answer.include?(true)
    youwin
 end
+
+
+def fullboard(board)
+    if board.include?("1") ||
+       board.include?("2") ||
+       board.include?("3") ||
+       board.include?("4") ||
+       board.include?("5") ||
+       board.include?("6") ||
+       board.include?("7") ||
+       board.include?("8") ||
+       board.include?("9") 
+        false
+    else
+        true
+    end
+end        
