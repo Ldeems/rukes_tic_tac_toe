@@ -114,9 +114,23 @@ def test_full_board_1
 end
 
 def test_full_board_2
-    board = ["x","o","x","o","x","o","x","o","9"]
+    board = ["x","o","x","o","x","o","x","8","9"]
     player = "o"
     choice = 8
+    assert_equal(false, fullboard(board))
+end
+
+def test_full_board_3
+    board = ["x","o","x","o","x","o","7","o","9"]
+    player = "x"
+    choice = 7
+    assert_equal(false, fullboard(board))
+end
+
+def test_full_board_4
+    board = ["x","o","x","o","x","o","7","8","9"]
+    player = "o"
+    choice = 6
     assert_equal(false, fullboard(board))
 end
 
