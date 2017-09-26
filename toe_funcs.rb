@@ -27,15 +27,23 @@ def playerchange(player)
     end
 end
 
-def validmove(board,player,choice)
-    if board[choice - 1] == "x"
-       move =  "invalid move"
-    elsif board[choice - 1] == "o"
-        move = "invalid move"
+def key_check?(choice)
+    keys = (1..9).to_a
+    if keys.include?(choice.to_i)
+        true
     else
-        move = "valid move"
+        false
+    end
+end
+
+def validmove(board,choice)
+    if board[choice - 1] == "x"
+       false
+    elsif board[choice - 1] == "o"
+        false
+    else
+        true
     end            
-   move
 end 
 
 def winner(board)
