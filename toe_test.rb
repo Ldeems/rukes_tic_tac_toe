@@ -50,19 +50,19 @@ class Toe_test < Minitest::Test
 #     assert_equal(false, winner(board))
 # end 
 
-# def test_winnig_1
-#     board = ["x","x","x","o","5","o","7","x","o"]
-#     player = "x"
-#     choice = 1
-#     assert_equal(true, winner(board))
-# end 
+def test_winnig_1
+    board = ["x","x","x","o","5","o","7","x","o"]
+    player = "x"
+    choice = 1
+    assert_equal(true, winner(board))
+end 
 
-# def test_winnig_2
-#     board = ["x","2","x","o","o","o","7","x","9"]
-#     player = "o"
-#     choice = 5
-#     assert_equal(true, winner(board))
-# end
+def test_winnig_2
+    board = ["x","2","x","o","o","o","7","x","9"]
+    player = "o"
+    choice = 5
+    assert_equal(true, winner(board))
+end
 
 def test_winnig_3
     board = ["1","2","3","x","x","6","7","x","9"]
