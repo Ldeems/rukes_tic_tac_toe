@@ -81,8 +81,15 @@ end
 def test_winnig_5
     board = ["1","2","x","o","x","6","x","o","9"]
     player = "x"
-    choice = 9
+    choice = 5
     assert_equal(true, winner(board))
+end
+
+def test_no_win_2
+    board = ["x","2","3","o","x","o","7","x","o"]
+    player = "x"
+    choice = 1
+    assert_equal(false, winner(board))
 end
 
 
