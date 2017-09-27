@@ -51,15 +51,18 @@ def winner(board)
     count = 0
     #p "#{board[count]} + #{board[4]} and #{board[((count%3)*2)+7]} + #{board[((count%3)*2)+7]}"
     until count == 9 do
+        p "#{board[count]} #{board[count+1]} == #{board[count+2]} #{board[count+2]}"
         if board[count] + "," + board[count+1] == board[count+2] + "," +  board[count+2]
                 answer << true
          else
+            p "#{board[(count/3)]} #{board[(count/3) + 3]} == #{board[(count/3) +6]} #{board[(count/3) +6]}"
             if board[(count/3)] + "," + board[(count/3) + 3] == board[(count/3) +6] + "," + board[(count/3) + 6]
                 answer << true
             else  
                 if count == 6
                     answer << false
-                else   
+                else 
+                    p "#{board[(count*2)/3]} #{board[4]} == #{board[((count*2)/-3)+8]} #{board[((count*2)/-3)+8]}"  
                     if board[(count*2)/3] + "," + board[4] == board[((count*2)/-3)+8] + "," + board[((count*2)/-3)+8]    
                         answer << true
                     else

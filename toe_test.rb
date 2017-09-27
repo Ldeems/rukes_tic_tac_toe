@@ -33,14 +33,14 @@ def test_valid_move_1
     board = ["1","x","3","o","5","6","7","x","9"]
     player = "o"
     choice = 2
-    assert_equal("invalid move", validmove(board,player,choice))
+    assert_equal(false, validmove(board,choice))
 end 
 
 def test_valid_move_2
     board = ["1","x","3","o","5","6","7","x","9"]
     player = "x"
     choice = 1
-    assert_equal("valid move", validmove(board,player,choice))
+    assert_equal(true, validmove(board,choice))
 end 
 
 def test_no_win
@@ -100,10 +100,10 @@ def test_winnig_6
 end
 
 def test_winnig_7
-    board = ["x","2","o","x","o","6","x","o","9"]
+    board = ["1","2","3","4","5","6","7","8","9"]
     player = "x"
     choice = 5
-    assert_equal(true, winner(board))
+    assert_equal(false, winner(board))
 end
 
 def test_full_board_1
