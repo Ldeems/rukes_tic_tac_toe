@@ -30,5 +30,36 @@ class Board
         end            
     end 
 
+    def winner(gboard)
+        answer = []
+        count = 0
+        #p "#{board[count]} + #{board[4]} and #{board[((count%3)*2)+7]} + #{board[((count%3)*2)+7]}"
+        until count == 9 do
+            #p "#{board[count]} #{board[count+1]} == #{board[count+2]} #{board[count+2]}"
+            if gboard[count] + "," + gboard[count+1] == gboard[count+2] + "," +  gboard[count+2]
+                    answer << true
+             else
+                #p "#{board[(count/3)]} #{board[(count/3) + 3]} == #{board[(count/3) +6]} #{board[(count/3) +6]}"
+                if gboard[(count/3)] + "," + gboard[(count/3) + 3] == gboard[(count/3) +6] + "," + gboard[(count/3) + 6]
+                    answer << true
+                else  
+                    if count == 6
+                        answer << false
+                    else 
+                        #p "#{board[(count*2)/3]} #{board[4]} == #{board[((count*2)/-3)+8]} #{board[((count*2)/-3)+8]}"  
+                        if gboard[(count*2)/3] + "," + gboard[4] == gboard[((count*2)/-3)+8] + "," + gboard[((count*2)/-3)+8]    
+                            answer << true
+                        else
+                            answer << false
+                        end
+                    end            
+                end    
+           end
+            count += 3
+        end    
+       youwin = answer.include?(true)
+       youwin
+    end
+
     
 end        

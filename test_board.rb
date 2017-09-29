@@ -51,6 +51,20 @@ class Test_board < Minitest::Test
         choice = 2 
         assert_equal(false,Board.new.validmove(gboard,choice))
     end
+
+    def test_board_winner_1
+        player = "o"
+        choice = 2
+        gboard = Board.new.updateboard(player,choice)
+        player = "o"
+        choice = 1
+        gboard = Board.new.updateboard(player,choice)
+        player = "o"
+        choice = 3
+        gboard = Board.new.updateboard(player,choice) 
+        assert_equal(false,Board.new.winner(gboard))
+    end
+
     
     
     
