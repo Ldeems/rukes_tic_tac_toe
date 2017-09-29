@@ -1,7 +1,15 @@
 class Board
 
-    attr_reader :board
+    attr_reader :gboard
     def initialize
-        @board = ["1","2","3","4","5","6","7","8","9"]
+        @gboard = ["1","2","3","4","5","6","7","8","9"]
     end
+
+    def updateboard(player,choice)  
+        @gboard[choice - 1] = player
+    
+       @gboard
+    end
+
+    
 end        
