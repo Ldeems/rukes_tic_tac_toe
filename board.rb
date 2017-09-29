@@ -20,5 +20,15 @@ class Board
         end
     end
 
+    def validmove(gboard,choice)
+        if gboard[choice - 1] == "x"
+           false
+        elsif gboard[choice - 1] == "o"
+            false
+        else
+            true
+        end            
+    end 
+
     
 end        
