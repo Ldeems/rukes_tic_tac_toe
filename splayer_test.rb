@@ -12,5 +12,10 @@ class Test_splayer < Minitest::Test
         board = ["x","o","x","4","5","6","7","8","9"]
         assert_equal(3,Splayer.new.smove(board))
     end 
+
+    def test_splayer_
+        board = ["x","o","x","o","5","x","7","8","9"]
+        assert_equal(4,Splayer.new.smove(board))
+    end 
 end    
     
