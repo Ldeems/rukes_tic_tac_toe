@@ -28,6 +28,13 @@ class Test_board < Minitest::Test
         choice = 5 
         assert_equal(true,Board.new.pick_check(choice))
     end 
+
+    def test_board_pick_checker_2
+        gboard = Board.new
+        player = "o"
+        choice = 10 
+        assert_equal(false,Board.new.pick_check(choice))
+    end
     
     
     
