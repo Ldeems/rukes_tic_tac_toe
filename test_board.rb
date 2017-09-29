@@ -106,6 +106,15 @@ class Test_board < Minitest::Test
          assert_equal(true,board.winner)
      end
 
+     def test_board_winner_7
+        board = Board.new
+        player = "x"
+        board.updateboard(player,1)
+        board.updateboard(player,5)
+        board.updateboard(player,9)
+         assert_equal(true,board.winner)
+     end
+
    
 
     
