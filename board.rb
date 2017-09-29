@@ -11,5 +11,14 @@ class Board
        @gboard
     end
 
+    def pick_check(choice)
+        keys = (1..9).to_a
+        if keys.include?(choice.to_i)
+            true
+        else
+            false
+        end
+    end
+
     
 end        
