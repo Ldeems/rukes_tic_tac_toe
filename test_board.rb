@@ -44,10 +44,12 @@ class Test_board < Minitest::Test
     end
 
     def test_board_valid_move_1
-        gboard = Board.new
+        player = "o"
+        choice = 2
+        gboard = Board.new.updateboard(player,choice)
         player = "x"
-        choice = "2" 
-        assert_equal(true,gboard.pick_check(choice))
+        choice = 2 
+        assert_equal(false,Board.new.validmove(gboard,choice))
     end
     
     
