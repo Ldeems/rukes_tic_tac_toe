@@ -61,5 +61,21 @@ class Board
        youwin
     end
 
+    def fullboard()
+        if gboard.include?("1") ||
+           gboard.include?("2") ||
+           gboard.include?("3") ||
+           gboard.include?("4") ||
+           gboard.include?("5") ||
+           gboard.include?("6") ||
+           gboard.include?("7") ||
+           gboard.include?("8") ||
+           gboard.include?("9") 
+            false
+        else
+            true
+        end
+    end 
+
     
 end        
