@@ -30,7 +30,7 @@ class Board
         end            
     end 
 
-    def winner(gboard)
+    def winner
         answer = []
         count = 0
         #p "#{board[count]} + #{board[4]} and #{board[((count%3)*2)+7]} + #{board[((count%3)*2)+7]}"
