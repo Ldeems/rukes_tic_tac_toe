@@ -13,7 +13,6 @@ def winningmove(board, player)
     #    p index
         if op == "#{index + 1}"
             board_class.updateboard(player,op)
-            p board_class
                 if board_class.winner? == true
                     choice = op
                 end
