@@ -19,7 +19,6 @@ def winningmove(board, player)
             board_class.updateboard("#{index + 1}", "#{index + 1}")       
         end
     end 
-    p choice
     if choice == ""
         false
     else
