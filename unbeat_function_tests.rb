@@ -69,9 +69,15 @@ class Test_unai < Minitest::Test
     # end
 
     def test_blockmove_1
-        board = ["x", "2", "3", "4", "5", "6", "7", "8", "x"]
-        player = "o"
+        board = ["o", "2", "3", "4", "5", "6", "7", "8", "o"]
+        player = "x"
         assert_equal("5", blockmove(board, player))
     end    
+
+    def test_blockmove_2
+        board = ["o", "2", "3", "o", "5", "6", "7", "8", "9"]
+        player = "x"
+        assert_equal("7", blockmove(board, player))
+    end 
 
 end    
