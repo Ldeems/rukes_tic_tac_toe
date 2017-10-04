@@ -62,7 +62,7 @@ class Test_unai < Minitest::Test
         assert_equal("3", winningmove(board, player))
     end
 
-    def test_winningmove_fucn_8
+    def test_winningmove_fucn_10
         board = ["x", "2", "3", "4", "5", "6", "7", "8", "x"]
         player = "x"
         assert_equal("5", winningmove(board, player))
