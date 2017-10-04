@@ -38,7 +38,7 @@ class Board
         #p "#{board[count]} + #{board[4]} and #{board[((count%3)*2)+7]} + #{board[((count%3)*2)+7]}"
         until count == 9 do
             #p "#{board[count]} #{board[count+1]} == #{board[count+2]} #{board[count+2]}"
-            if gboard[count] + "," + gboard[count+1] == gboard[count+2] + "," +  gboard[count+2]
+            if gboard[count] + gboard[count+1] == gboard[count+2] +  gboard[count+2]
                     answer << true
              else
                 #p "#{board[(count/3)]} #{board[(count/3) + 3]} == #{board[(count/3) +6]} #{board[(count/3) +6]}"
@@ -60,6 +60,7 @@ class Board
             count += 3
         end    
        youwin = answer.include?(true)
+       
        youwin
     
     end
