@@ -61,6 +61,7 @@ class Board
         end    
        youwin = answer.include?(true)
        youwin
+    
     end
 
     def fullboard?()
