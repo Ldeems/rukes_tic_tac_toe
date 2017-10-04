@@ -1,17 +1,18 @@
 class Board
 
-    attr_reader :gboard
+    attr_accessor :gboard
     def initialize
         @gboard = ["1","2","3","4","5","6","7","8","9"]
     end
 
-    def updateboard(player,choice)  
-        @gboard[choice - 1] = player
+    def updateboard(player,choice)
+        int = choice.to_i  
+        @gboard[int - 1] = player
     
        @gboard
     end
 
-    def pick_check(choice)
+    def pick_check?(choice)
         keys = (1..9).to_a
         if keys.include?(choice.to_i)
             true
@@ -20,17 +21,18 @@ class Board
         end
     end
 
-    def validmove(gboard,choice)
-        if gboard[choice - 1] == "x"
+    def validmove?(choice)
+        int = choice.to_i
+        if gboard[int - 1] == "x"
            false
-        elsif gboard[choice - 1] == "o"
+        elsif gboard[int - 1] == "o"
             false
         else
             true
         end            
     end 
 
-    def winner
+    def winner?()
         answer = []
         count = 0
         #p "#{board[count]} + #{board[4]} and #{board[((count%3)*2)+7]} + #{board[((count%3)*2)+7]}"
@@ -61,7 +63,7 @@ class Board
        youwin
     end
 
-    def fullboard()
+    def fullboard?()
         if gboard.include?("1") ||
            gboard.include?("2") ||
            gboard.include?("3") ||
@@ -76,6 +78,14 @@ class Board
             true
         end
     end 
+
+    def print() 
+        p "#{gboard[0]} | #{gboard[1]} | #{gboard[2]}" 
+        p "----------"
+        p "#{gboard[3]} | #{gboard[4]} | #{gboard[5]}"
+        p "----------"
+        p "#{gboard[6]} | #{gboard[7]} | #{gboard[8]}"
+    end    
 
     
 end        

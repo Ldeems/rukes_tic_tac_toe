@@ -55,9 +55,10 @@ class Test_board < Minitest::Test
     def test_board_winner_1
        board = Board.new
        player = "x"
-       board.updateboard(player,1)
-       board.updateboard(player,2)
-       board.updateboard(player,3)
+    #    board.updateboard(player,1)
+    #    board.updateboard(player,2)
+    #    board.updateboard(player,3)
+        board.gboard = ["x","x","x","4","5","6","7","8","9"]
         assert_equal(true,board.winner)
     end
 

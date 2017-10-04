@@ -12,6 +12,6 @@ class Test_rplayer < Minitest::Test
     def test_rplayer_
         board = ["1","x","x","o","o","x","o","x","o"]
         ther = Rplayer.new.rmove(board)
-        assert_equal(true, [0,1,2,3,4,5,6,7,8].include?(ther))
+        assert_equal(true, [0].include?(ther))
     end
 end    

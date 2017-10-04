@@ -1,6 +1,6 @@
 class Rplayer
     
-       def rmove(board)
+       def move(board)
         choice = ["1","2","3","4","5","6","7","8","9"]
             count = 0
             pick = ""
@@ -12,7 +12,7 @@ class Rplayer
                 end
             end
             p rand_pick
-           r = rand_pick - 1
+           r = rand_pick
            p r
            r
         end
