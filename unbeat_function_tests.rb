@@ -127,4 +127,9 @@ class Test_unai < Minitest::Test
         assert_equal("1", firstmove(board))
     end 
 
+    def test_firstmove_3
+        board = ["o", "2", "3", "4", "5", "6", "7", "8", "9"]
+        assert_equal("5", firstmove(board))
+    end 
+
 end    
