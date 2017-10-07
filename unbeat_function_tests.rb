@@ -179,9 +179,9 @@ class Test_unai < Minitest::Test
     end 
 
     def test_secondmove_5
-        board = ["1", "2", "3", "4", "5", "o", "o", "8", "x"]
+        board = ["1", "o", "3", "4", "x", "6", "o", "8", "x"]
         player = "x"
-        possible = ["3","1"]
+        possible = ["3","1","9"]
         assert_equal(true, possible.include?(secondmove(board,player)))
     end 
 end    
