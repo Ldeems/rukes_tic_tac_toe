@@ -220,4 +220,10 @@ class Test_unai < Minitest::Test
         player = "x"
         assert_equal("2", secondmove(board,player))
     end
+
+    def test_secondmove_12
+        board = ["1", "2", "o", "4", "x", "6", "o", "8", "9"]
+        player = "x"
+        assert_equal("2", secondmove(board,player))
+    end
 end    
