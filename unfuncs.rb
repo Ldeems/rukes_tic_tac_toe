@@ -87,36 +87,46 @@ end
 
 #----------------------------------------second move function------------------------
 
-def secondmove(board)
+def secondmove(board, player)
     choice = ""
     xplayer = []
     oplayer = []
     open = []
+    pick = "nope"
+    corner = [0,2,6,8]
     board.each_with_index do |pmove, index|
-            if pmove == "x"
-                xplayer << index
-            elsif pmove == "o"
-                oplayer << index
-            else
-                open << index
-            end            
-
-        if oplayer.length == 2
-            if players_move[0] % 2 == 1 && players_move[1] % 2 == 1
-                choice = 4
-            elsif players_move[0] % 2 == 0 && players_move[1] % 2 == 0
-                choice = 0
-            elsif players_move[0] % 2 == 0 && players_move[1] % 2 == 1 && players_move.include?(4) == false|| players_move[0] % 2 == 1 && players_move[1] % 2 == 0 && players_move.include?(4) == false
-                choice = 5
-            end
-        elsif x.length == 2
-            if players_move[0] % 2 == 1 && players_move[1] % 2 == 1
-                choice = 4
-            elsif players_move[0] % 2 == 0 && players_move[1] % 2 == 0
-                choice = 0
-            elsif players_move[0] % 2 == 0 && players_move[1] % 2 == 1 && players_move.include?(4) == false|| players_move[0] % 2 == 1 && players_move[1] % 2 == 0 && players_move.include?(4) == false
-                choice = 5
-            end
-        end
+        if pmove == "x"
+            xplayer << index
+        elsif pmove == "o"
+            oplayer << index
+        else
+            open << index
+        end  
     end    
+    if player == "o"
+        if xplayer[0] == 0 || xplayer[0] == 8
+            choice = 6
+        elsif xplayer[0] == 6 || xplayer[0] == 2
+            choice = 8
+        else
+            choice = 0
+        end            
+    else
+        if oplayer[0] % 2 == 1 && oplayer[1] % 2 == 1
+            choice = 4
+        elsif oplayer.include?(2) == true && oplayer.include?(4) == true
+            choice = 0
+        elsif oplayer[0] % 2 == 0 && oplayer[1] % 2 == 0 && oplayer.include?(4) == false
+            choice = 1
+        else
+            until pick == "open" do
+                a = corner.sample
+                if oplayer.include?(a) == false && xplayer.include?(a) == false
+                    pick = "open"
+                    choice = a
+                end
+            end        
+        end  
+    end
+    "#{choice + 1}"    
 end    
