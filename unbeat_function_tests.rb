@@ -183,5 +183,11 @@ class Test_unai < Minitest::Test
         player = "x"
         possible = ["3","1","9"]
         assert_equal(true, possible.include?(secondmove(board,player)))
+    end
+    
+    def test_secondmove_6
+        board = ["x", "o", "3", "4", "5", "o", "7", "8", "9"]
+        player = "x"
+        assert_equal("5", secondmove(board,player))
     end 
 end    
