@@ -152,39 +152,3 @@ def allai(firstai,secondai,board,player)
         end
     end
 end        
-
-
-
-
-
-
-# if player.player == "o"
-#     choice = gets.chomp
-# elsif ai != "none"
-#     choice = ai.move(board.gboard, player.player)  
-# else
-#     choice = gets.chomp
-# end
-# if board.pick_check?(choice) == true
-#     if board.validmove?(choice) == true
-#         board.updateboard(player.player,choice)
-#         if board.winner? == true
-#             p "player #{player.player} is the winner"
-#             game = "end"
-#             board.print
-#         else
-#             if board.fullboard? == true   
-#                 board.print
-#                 p "TIE GAME"
-#                 game = "end"
-#             else
-#                 player.playerchange
-#             end
-#         end
-#     else
-#         p "spot already taken"
-#     end
-# else
-# p "not a valid choice"
-# end
-# end

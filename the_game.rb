@@ -6,7 +6,6 @@ require_relative 'aiplayer.rb'
 require_relative 'unplayer.rb'
 require_relative 'thegamefuncs.rb'
 
-
 def game
     board = Board.new
     player = Player.new
@@ -23,13 +22,10 @@ until game != "notyet" do
                 p "how hard do you want it to be: 1 = random, 2 = sequential, 3 = unbeatable(goodluck)"
                 diff = gets.chomp
                 if diff == "2"
-                    ai = Splayer.new
                     game = "start"
                 elsif diff == "1"
-                    ai = Rplayer.new
                     game = "start"
                 elsif diff == "3"
-                    ai = Trymeplayer.new
                     game = "start"
                 else
                     p "not a valid choice"
@@ -42,7 +38,6 @@ until game != "notyet" do
         game = "start"
     elsif num == "0"
         game = "start"
-       ai = "full"
        p "pick the dificulties (1 = random, 2 = sequential, 3 = unbeatable) that shall fight it out"
        firstai = gets.chomp
        secondai = gets.chomp
