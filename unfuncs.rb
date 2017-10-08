@@ -129,4 +129,32 @@ def secondmove(board, player)
         end  
     end
     "#{choice + 1}"    
-end    
+end
+
+#-------------------------third move section---------------------
+
+def thirdmove(board, player)
+    choice = ""
+    xplayer = []
+    oplayer = []
+    open = []
+    board.each_with_index do |pmove, index|
+        if pmove == "x"
+            xplayer << index
+        elsif pmove == "o"
+            oplayer << index
+        else
+            open << index
+        end  
+    end
+    if player == "o"
+        if oplayer.include?(0) == true
+            choice = 2   
+        else
+            choice = open.sample 
+        end    
+    else
+      choice = open.sample
+    end
+    "#{choice + 1}"      
+end       
