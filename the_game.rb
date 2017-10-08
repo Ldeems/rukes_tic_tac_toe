@@ -41,9 +41,9 @@ until game != "notyet" do
     elsif num == "2"
         game = "start"
     elsif num == "0"
-        game = start
+        game = "start"
        ai = "full"
-       p "pick the dificulties (1,2,3) that shall fight it out"
+       p "pick the dificulties (1 = random, 2 = sequential, 3 = unbeatable) that shall fight it out"
        firstai = gets.chomp
        secondai = gets.chomp
     else    
@@ -55,7 +55,9 @@ end
         if num == "2"
             twoplayers(board.gboard, player.player)
         elsif num == "1"
-            pvsai(turn,diff,board.gboard,player.player)    
+            pvsai(turn,diff,board.gboard,player.player) 
+        elsif num == "0"
+            allai(firstai,secondai,board.gboard,player.player)       
         end      
     end
 end
