@@ -238,4 +238,11 @@ class Test_unai < Minitest::Test
         player = "o"
         assert_equal("3", thirdmove(board,player))
     end
+
+    def test_thirdmove_3
+        board = ["o", "o", "3", "4", "x", "6", "x", "8", "o"]
+        player = "x"
+        openmoves = ["3", "4","6","8"]
+        assert_equal(true,openmoves.include?(thirdmove(board,player)))
+    end
 end    
