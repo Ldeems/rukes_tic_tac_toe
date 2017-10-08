@@ -1,7 +1,7 @@
 class Splayer
     
 
-    def move(board)
+    def move(board,player)
         pick = ""
         choice = ["1","2","3","4","5","6","7","8","9"]
         count = 0

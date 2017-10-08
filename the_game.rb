@@ -20,7 +20,7 @@ until game != "notyet" do
         turn = gets.chomp
         if turn == "first" || turn == "second"
             until ai != "none" do
-                p "how hard do you want it to be: 1:2:3"
+                p "how hard do you want it to be: 1 = random, 2 = sequential, 3 = unbeatable(goodluck)"
                 diff = gets.chomp
                 if diff == "2"
                     ai = Splayer.new
@@ -54,6 +54,8 @@ end
     if game == "start"
         if num == "2"
             twoplayers(board.gboard, player.player)
+        elsif num == "1"
+            pvsai(turn,diff,board.gboard,player.player)    
         end      
     end
 end
