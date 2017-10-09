@@ -22,10 +22,13 @@ until game != "notyet" do
                 p "how hard do you want it to be: 1 = random, 2 = sequential, 3 = unbeatable(goodluck)"
                 diff = gets.chomp
                 if diff == "2"
+                    ai = "gotit"
                     game = "start"
                 elsif diff == "1"
+                    ai = "gotit"
                     game = "start"
                 elsif diff == "3"
+                    ai = "gotit"
                     game = "start"
                 else
                     p "not a valid choice"
