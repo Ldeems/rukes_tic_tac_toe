@@ -7,7 +7,6 @@ require_relative 'unplayer.rb'
 
 
 
-
 def twoplayers(board,player)
     yboard = Board.new
     yboard.gboard = board
@@ -27,13 +26,13 @@ def twoplayers(board,player)
             if yboard.validmove?(choice) == true
                 yboard.updateboard(aplayer.player,choice)
                 if yboard.winner? == true
-                    p "player #{aplayer.player} is the winner"
+                    results = "player #{aplayer.player} is the winner"
                     game = "end"
                     yboard.print
                 else
                     if yboard.fullboard? == true   
                         yboard.print
-                        p "TIE GAME"
+                        results = "TIE GAME"
                         game = "end"
                     else
                         aplayer.playerchange
@@ -45,7 +44,8 @@ def twoplayers(board,player)
         else
         p "not a valid choice"
         end
-    end  
+    end
+    results  
 end
 
 def pvsai(turn,diff,board,player)
@@ -121,8 +121,8 @@ def allai(firstai,secondai,board,player)
     end
     until game == "end"
         choice = ""
-        yboard.print
-        p "player #{aplayer.player}'s turn"
+        #yboard.print
+        #p "player #{aplayer.player}'s turn"
         if aplayer.player == "o"
             choice = firstai.move(yboard.gboard, aplayer.player)
         else
@@ -132,13 +132,13 @@ def allai(firstai,secondai,board,player)
             if yboard.validmove?(choice) == true
                 yboard.updateboard(aplayer.player,choice)
                 if yboard.winner? == true
-                    p "player #{aplayer.player} is the winner"
-                    game = "end"
                     yboard.print
+                    results = "player #{aplayer.player} is the winner"
+                    game = "end" 
                 else
                     if yboard.fullboard? == true   
                         yboard.print
-                        p "TIE GAME"
+                        results = "TIE GAME"
                         game = "end"
                     else
                         aplayer.playerchange
@@ -151,4 +151,5 @@ def allai(firstai,secondai,board,player)
         p "not a valid choice"
         end
     end
+    results
 end        

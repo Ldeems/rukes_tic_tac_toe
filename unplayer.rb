@@ -29,7 +29,7 @@ class Trymeplayer
         else
             choice = winningmove(theboard.gboard, aplayer.player)
         end
-        p choice
+        #p choice
         choice       
     end 
 end       

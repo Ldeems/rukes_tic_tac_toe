@@ -102,7 +102,8 @@ def secondmove(board, player)
         else
             open << index
         end  
-    end    
+    end 
+   
     if player == "o"
         if xplayer[0] == 0 || xplayer[0] == 8
             choice = 6

@@ -60,4 +60,26 @@ end
     end
 end
 
-game
+#game
+
+# def aivsai
+#     counter = 0
+#     10000.times do
+#     board = Board.new
+#     player = Player.new
+#     firstai = "3"
+#     secondai = "3"
+
+#         counter += 1
+#         #allai(firstai,secondai,board.gboard,player.player)
+#         if allai(firstai,secondai,board.gboard,player.player) != "TIE GAME"
+#             p counter
+#             p  "it fucked up"
+#         else
+            
+    
+#         end
+#     end
+# end
+
+# aivsai
