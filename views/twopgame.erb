@@ -1,13 +1,35 @@
-<%=p1name%><br>
-<%=p2name%><br>
 <br>
 <br>
 <br>
 <br>
+<form method="post" action="update">
 <%yboard = Board.new%>
 <%try = yboard.appprint%>
 <%try.each do |a|%>
     <%=a%><br>
-<%end%>    
+<%end%>
+<br>
+<%aplayer = Player.new%>
+<%if aplayer.player == "o"%>
+    <%=p1name%>s turn
+<%elsif aplayer.player == "x"%>
+    <%=p2name%>s turn 
+<%end%>  
+<br>
+<%open = []%>
+<%yboard.gboard.each do |a|%>
+    <%if a == "o"%>
+    <%elsif a == "x"%>
+    <%else%>
+        <%open << a%>
+    <%end%>
+<%end%>
+<br>
+<%open.each do |b|%>
+    <input type="radio" name="pick" value="b" required%><%=b%> ..
+<%end%>
+<br>
+<input type="submit" name="submit" value="make move">
+</form>                
 
 

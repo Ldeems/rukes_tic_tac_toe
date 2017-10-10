@@ -35,4 +35,9 @@ get '/2pgame' do
     p1name = params[:p1name]
     p2name = params[:p2name]
     erb :twopgame, locals:{p1name:p1name, p2name:p2name}
-end    
+end 
+
+post '/update' do
+    pick = params[:pick]
+    "#{pick}"
+end
