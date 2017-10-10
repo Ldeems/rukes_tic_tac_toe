@@ -28,11 +28,11 @@ end
 post '/twoplayergame' do
     p1name = params[:p1name]
     p2name = params[:p2name]
-    redirect '/2pgame?p1name=' + p1name & 'p2name=' + p2name
+    redirect '/2pgame?p1name=' + p1name + '&p2name=' + p2name
 end
 
 get '/2pgame' do
     p1name = params[:p1name]
     p2name = params[:p2name]
-    erb :2pgame, locals:{p1name:p1name, p2name:p2name}
+    erb :twopgame, locals:{p1name:p1name, p2name:p2name}
 end    

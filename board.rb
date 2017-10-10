@@ -89,5 +89,11 @@ class Board
         p "#{gboard[6]} | #{gboard[7]} | #{gboard[8]}"
     end    
 
-    
+    def appprint
+       a = ["#{gboard[0]} | #{gboard[1]} | #{gboard[2]}", 
+         "----------",
+         "#{gboard[3]} | #{gboard[4]} | #{gboard[5]}",
+         "----------",
+         "#{gboard[6]} | #{gboard[7]} | #{gboard[8]}"]
+    end    
 end        
