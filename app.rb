@@ -69,3 +69,8 @@ end
 get '/pvsa' do
     erb :pvsa, local:{}
 end    
+
+post '/playervsai' do
+    pick = params[:pick]
+    "#{pick}"
+end

@@ -1,2 +1,25 @@
-<%=session[:pname]%><br>
-<%=session[:diff]%>
+
+
+
+<%try = session[:board].appboard%>
+<%try.each do |a|%>
+    <%=a%><br>
+<%end%>
+<br>
+<br>
+<%open = []%>
+<%session[:board].gboard.each do |a|%>
+    <%if a == "o"%>
+    <%elsif a == "x"%>
+    <%else%>
+        <%open << a%>
+    <%end%>
+<%end%>
+<br>
+<form method="post" action="playervsai">
+<%open.each do |b|%>
+    <input type="radio" name="pick" value="<%=b%>" checked="checked"%><%=b%> 
+<%end%>
+<br>
+<input type="submit" name="submit" value="make move">
+</form> 
