@@ -61,6 +61,11 @@ end
 
 post '/oneplayergame' do
     session[:pname] = params[:pname]
-    session[:dif] = params[:dif]
-    "#{session[:pname]}......#{session[:dif]}"
+    session[:diff] = params[:diff]
+    #"#{session[:pname]}......#{session[:diff]}"
+    redirect '/pvsa'
 end
+
+get '/pvsa' do
+    erb :pvsa, local:{}
+end    
