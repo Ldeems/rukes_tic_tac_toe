@@ -152,4 +152,30 @@ def allai(firstai,secondai,board,player)
         end
     end
     results
+end
+
+def apptpg(cboard,cplayer,pick)
+    yboard = Board.new
+    yboard.gboard = cboard
+    aplayer = Player.new
+    aplayer.player = cplayer
+       
+        choice = pick
+        if yboard.pick_check?(choice) == true
+         
+            if yboard.validmove?(choice) == true
+             
+                yboard.updateboard(aplayer.player,choice)
+                if yboard.winner? == true
+                    results = "WINNER"
+                else
+                    if yboard.fullboard? == true   
+                        results = "TIE"
+                    else
+                        results = "next"
+                    end
+                end
+            end
+        end
+    results    
 end        

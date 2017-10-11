@@ -22,14 +22,15 @@ class Board
     end
 
     def validmove?(choice)
-        int = choice.to_i
-        if gboard[int - 1] == "x"
-           false
-        elsif gboard[int - 1] == "o"
-            false
-        else
-            true
-        end            
+        # int = choice.to_i
+        # if gboard[int - 1] == "x"
+        #    false
+        # elsif gboard[int - 1] == "o"
+        #     false
+        # else
+        #     true
+        # end   
+        true         
     end 
 
     def winner?()
@@ -38,7 +39,7 @@ class Board
         #p "#{board[count]} + #{board[4]} and #{board[((count%3)*2)+7]} + #{board[((count%3)*2)+7]}"
         until count == 9 do
             #p "#{board[count]} #{board[count+1]} == #{board[count+2]} #{board[count+2]}"
-            if gboard[count] + gboard[count+1] == gboard[count+2] +  gboard[count+2]
+            if gboard[count] + "," + gboard[count+1] == gboard[count+2] + "," + gboard[count+2]
                     answer << true
              else
                 #p "#{board[(count/3)]} #{board[(count/3) + 3]} == #{board[(count/3) +6]} #{board[(count/3) +6]}"
@@ -89,7 +90,7 @@ class Board
         p "#{gboard[6]} | #{gboard[7]} | #{gboard[8]}"
     end    
 
-    def appprint
+    def appboard
        a = ["#{gboard[0]} | #{gboard[1]} | #{gboard[2]}", 
          "----------",
          "#{gboard[3]} | #{gboard[4]} | #{gboard[5]}",

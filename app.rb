@@ -1,11 +1,13 @@
 require 'sinatra'
-require_relative 'the_game.rb'
+require_relative 'thegamefuncs.rb'
 require_relative 'board.rb'
 require_relative 'player_class.rb'
 enable :sessions 
 
 
 get '/' do
+    session[:board] = Board.new
+    session[:player] = Player.new
     erb :welcome
 end    
 
@@ -26,18 +28,39 @@ get '/getstarted' do
 end 
 
 post '/twoplayergame' do
-    p1name = params[:p1name]
-    p2name = params[:p2name]
-    redirect '/2pgame?p1name=' + p1name + '&p2name=' + p2name
+    session[:p1name] = params[:p1name]
+    session[:p2name] = params[:p2name]
+    outcome = "next"
+    pick = ""
+    uplayer = "x"
+    ub = ""
+    redirect '/2pgame?outcome=' + outcome + '&pick=' + pick + '&uplayer=' + uplayer + '&ub=' + ub
 end
 
 get '/2pgame' do
-    p1name = params[:p1name]
-    p2name = params[:p2name]
-    erb :twopgame, locals:{p1name:p1name, p2name:p2name}
+    outcome = params[:outcome]
+    pick = params[:pick]
+    uplayer = params[:uplayer]
+    if pick != ""
+        session[:board].updateboard(session[:player].player,pick)
+        outcome = apptpg(session[:board].gboard,session[:player].player,pick)
+        session[:player].playerchange
+        erb :twopgame, locals:{outcome:outcome}
+    else
+        erb :twopgame, locals:{outcome:outcome}
+    end    
 end 
 
 post '/update' do
     pick = params[:pick]
-    "#{pick}"
+    uplayer = params[:uplayer]
+    
+    redirect '/2pgame?pick=' + pick + '&uplayer=' + uplayer 
+end
+
+
+post '/oneplayergame' do
+    session[:pname] = params[:pname]
+    session[:dif] = params[:dif]
+    "#{session[:pname]}......#{session[:dif]}"
 end
