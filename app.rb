@@ -150,5 +150,8 @@ post '/sres' do
     session[:outcome] = gameonsecond(session[:board].gboard,session[:player].player,pick,session[:diff],session[:zero])
     session[:player].playerchange
     redirect '/second?pick=' + pick
+end  
 
+get '/playagian' do
+    redirect '/'
 end    

@@ -42,12 +42,28 @@
     <%try.each do |a|%>
         <%=a%><br>
     <%end%>
+    <br>
+    <br>
+    <br>
+    <br>
+    Start over?<br>
+    <form mothod="post" action="playagian">
+    <input type="submit" name="" value="start over">
+    </form>
 <%elsif outcome == "TIE"%>
     CATS Game<br><br>
     <%try = session[:board].appboard%>
     <%try.each do |a|%>
         <%=a%><br>
     <%end%>
+    <br>
+    <br>
+    <br>
+    <br>
+    Start over?<br>
+    <form mothod="post" action="playagian">
+    <input type="submit" name="" value="start over">
+    </form>
 <%else%>
 
 broken    
