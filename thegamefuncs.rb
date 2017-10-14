@@ -178,4 +178,74 @@ def apptpg(cboard,cplayer,pick)
             end
         end
     results    
-end        
+end 
+
+def gameon(board,player,pick,diff,whichai)
+    yboard = Board.new
+    yboard.gboard = board
+    aplayer = Player.new
+    aplayer.player = player
+    game = "start"
+    if diff == "medium"
+        ai = whichai
+    elsif diff == "easy"
+        ai = whichai
+    elsif diff == "hard"
+        ai = whichai
+    end
+    if aplayer.player == "o"
+        choice = pick
+    elsif    
+        choice = ai.move(yboard.gboard, aplayer.player)
+    end
+        if yboard.pick_check?(choice) == true
+            if yboard.validmove?(choice) == true
+                yboard.updateboard(aplayer.player,choice)
+                if yboard.winner? == true
+                    outcome = "WINNER"
+                else
+                    if yboard.fullboard? == true   
+                        outcome = "TIE"
+                    else
+                        outcome = "next"
+                    end
+                end
+            end
+        end
+     outcome 
+end 
+
+def gameonsecond(board,player,pick,diff,whichai)
+    yboard = Board.new
+    yboard.gboard = board
+    aplayer = Player.new
+    aplayer.player = player
+    game = "start"
+    if diff == "medium"
+        ai = whichai
+    elsif diff == "easy"
+        ai = whichai
+    elsif diff == "hard"
+        ai = whichai
+    end
+    if aplayer.player == "o"
+        choice = ai.move(yboard.gboard, aplayer.player)
+    elsif    
+        choice = pick
+    end
+        if yboard.pick_check?(choice) == true
+            if yboard.validmove?(choice) == true
+                yboard.updateboard(aplayer.player,choice)
+                if yboard.winner? == true
+                    outcome = "WINNER"
+                else
+                    if yboard.fullboard? == true   
+                        outcome = "TIE"
+                    else
+                        outcome = "next"
+                    end
+                end
+            end
+        end
+     outcome 
+end 

@@ -2,12 +2,21 @@ require 'sinatra'
 require_relative 'thegamefuncs.rb'
 require_relative 'board.rb'
 require_relative 'player_class.rb'
+require_relative 'splayer.rb'
+require_relative 'rplayer.rb'
+require_relative 'aiplayer.rb'
+require_relative 'unplayer.rb'
 enable :sessions 
 
 
 get '/' do
     session[:board] = Board.new
     session[:player] = Player.new
+    session[:two] = Splayer.new
+    session[:one] = Rplayer.new
+    session[:three] = Trymeplayer.new
+    session[:outcome] = "next"
+    session[:zero] = "nope"
     erb :welcome
 end    
 
@@ -62,15 +71,84 @@ end
 post '/oneplayergame' do
     session[:pname] = params[:pname]
     session[:diff] = params[:diff]
+    order = params[:order]
+    pick = ""
     #"#{session[:pname]}......#{session[:diff]}"
-    redirect '/pvsa'
+    if order == "first"
+        redirect '/pvsa?pick=' + pick
+    elsif order == "second"
+        redirect '/second?pick=' + pick 
+    end       
 end
 
 get '/pvsa' do
+    pick = params[:pick]
+    if pick != ""
+        
+         session[:board].updateboard(session[:player].player,pick)
+         session[:outcome] = gameon(session[:board].gboard,session[:player].player,pick,session[:diff],session[:zero])
+         session[:player].playerchange
+            if session[:outcome] == "next"
+                if session[:diff] == "easy"
+                    session[:outcome] = gameon(session[:board].gboard,session[:player].player,pick,session[:diff],session[:one])
+                    session[:player].playerchange
+                    # "#{session player} made it here"
+                    erb :pvsa, local:{}
+                elsif session[:diff] == "medium"
+                    session[:outcome] = gameon(session[:board].gboard,session[:player].player,pick,session[:diff],session[:two])
+                    session[:player].playerchange
+                    erb :pvsa, local:{}
+                elsif session[:diff] == "hard"
+                    session[:outcome] = gameon(session[:board].gboard,session[:player].player,pick,session[:diff],session[:three])
+                    session[:player].playerchange
+                    erb :pvsa, local:{}
+                else
+                    "broken"
+                end
+            else 
+                erb :pvsa, local:{}
+            end               
+    else    
     erb :pvsa, local:{}
+    end
 end    
 
 post '/playervsai' do
     pick = params[:pick]
-    "#{pick}"
+    # "#{pick}"
+    redirect '/pvsa?pick=' + pick
 end
+
+get '/second' do
+    pick = params[:pick]
+    
+    if session[:outcome] == "next"
+         if session[:diff] == "easy"
+            
+             session[:outcome] = gameonsecond(session[:board].gboard,session[:player].player,pick,session[:diff],session[:one])
+            session[:player].playerchange
+            erb :second, local:{}
+        elsif session[:diff] == "medium"
+            session[:outcome] = gameonsecond(session[:board].gboard,session[:player].player,pick,session[:diff],session[:two])
+            session[:player].playerchange
+            erb :second, local:{}
+        elsif session[:diff] == "hard"
+            session[:outcome] = gameonsecond(session[:board].gboard,session[:player].player,pick,session[:diff],session[:three])
+            session[:player].playerchange
+            erb :second, local:{}
+        else
+            "broken"
+        end
+    else 
+        erb :second, local:{}
+    end    
+end 
+
+post '/sres' do
+    pick = params[:pick]
+    session[:board].updateboard(session[:player].player,pick)
+    session[:outcome] = gameonsecond(session[:board].gboard,session[:player].player,pick,session[:diff],session[:zero])
+    session[:player].playerchange
+    redirect '/second?pick=' + pick
+
+end    
