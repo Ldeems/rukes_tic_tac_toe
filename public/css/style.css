@@ -1,0 +1,24 @@
+body{
+	background-image: url(/image/back.jpeg);
+	background-size: 100% 100%;
+	font-size: 5vh;
+    font-weight: bold;
+    text-align: center;
+    color: gold;
+    float: left;
+    margin-left: 40px;
+    margin-top: 20px;
+    
+}
+
+#badpage{
+    background-image: url(/image/carldance.gif);
+	background-size: 100% 100%;
+}
+
+#happy{
+    background-image: url(/image/jack.gif);
+    background-size: 100% 100%;
+    color: white;
+    height: 25vh;
+}
