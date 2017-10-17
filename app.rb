@@ -6,6 +6,7 @@ require_relative 'splayer.rb'
 require_relative 'rplayer.rb'
 require_relative 'aiplayer.rb'
 require_relative 'unplayer.rb'
+require_relative 'tablemethods.rb'
 enable :sessions 
 
 
@@ -154,4 +155,6 @@ end
 
 get '/playagian' do
     redirect '/'
-end    
+end 
+
+

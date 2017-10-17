@@ -21,6 +21,23 @@ Two player game<br>
     <br>
     <input type="submit" name="get some" value="get some">
 </form>
+<br>
+Outcome of the past PvP fights<br>
+<% a = table()%>
+<%a.each do |b|%>
+    <%count = 1%>
+    <%b.each do |c|%>
+        <%if count < 3%>
+            <%=c%>,
+        <%else%>
+            <%=c%>
+        <%end%>        
+        <%count +=1%>
+    <%end%>    
+        <br>
+<%end%>    
+
+
 
 
 

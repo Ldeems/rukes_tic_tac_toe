@@ -1,7 +1,5 @@
 <br>
 <br>
-<br>
-<br>
 
 <%if outcome == "next"%>
     <%try = session[:board].appboard%>
@@ -35,8 +33,10 @@
 <%elsif outcome == "WINNER"%>
     <%if session[:player].player == "x"%>
         <%=session[:p1name]%> is the winner
+        <%results = "#{session[:p1name]}"%>
     <%elsif session[:player].player == "o"%>
         <%=session[:p2name]%> is the winner 
+        <%results = "#{session[:p2name]}"%>
     <%end%> <br><br>
     <%try = session[:board].appboard%>
     <%try.each do |a|%>
@@ -44,6 +44,9 @@
     <%end%>
     <br>
     <br>
+    <%info = Time.new%>
+    <%game = "#{session[:p1name]} vs #{session[:p2name]}"%>
+    <%add_to_table(game,results,info)%>
     <br>
     <br>
     Start over?<br>
@@ -58,6 +61,10 @@
     <%end%>
     <br>
     <br>
+    <%info = Time.new%>
+    <%game = "#{session[:p1name]} vs #{session[:p2name]}"%>
+    <%results = "tie game"%>
+    <%add_to_table(game,results,info)%>
     <br>
     <br>
     Start over?<br>
