@@ -21,7 +21,7 @@
         <input type="radio" name="pick" value="<%=b%>" checked="checked"%><%=b%> 
     <%end%>
     <br>
-    <input type="submit" name="submit" value="make move">
+    <input type="submit" name="submit" value="make move" id="button">
     </form> 
 <%elsif session[:outcome] == "WINNER"%>
         WINNER<br>
@@ -35,7 +35,7 @@
     <br>
     Start over?<br>
     <form mothod="post" action="playagian">
-    <input type="submit" name="" value="start over">
+    <input type="submit" name="" value="start over" id="button">
     </form>
     <%elsif session[:outcome] == "TIE"%>
         TIE<br>
@@ -49,6 +49,6 @@
     <br>
     Start over?<br>
     <form mothod="post" action="playagian">
-    <input type="submit" name="" value="start over">
+    <input type="submit" name="" value="start over" id="button">
     </form>
 <%end%>

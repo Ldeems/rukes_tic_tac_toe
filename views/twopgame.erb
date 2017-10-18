@@ -28,7 +28,7 @@
     <%end%>
     <br>
     <input type="hidden" name="uplayer" value="<%=session[:player].player%>"><%session[:player].player%>
-    <input type="submit" name="submit" value="make move">
+    <input type="submit" name="submit" value="make move" id="button">
     </form> 
 <%elsif outcome == "WINNER"%>
     <%if session[:player].player == "x"%>
@@ -51,7 +51,7 @@
     <br>
     Start over?<br>
     <form mothod="post" action="playagian">
-    <input type="submit" name="" value="start over">
+    <input type="submit" name="" value="start over" id="button">
     </form>
 <%elsif outcome == "TIE"%>
     CATS Game<br><br>
@@ -69,7 +69,7 @@
     <br>
     Start over?<br>
     <form mothod="post" action="playagian">
-    <input type="submit" name="" value="start over">
+    <input type="submit" name="" value="start over" id="button">
     </form>
 <%else%>
 

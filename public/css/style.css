@@ -1,6 +1,6 @@
 body{
 	background-image: url(/image/back.jpeg);
-	background-size: 100% 100%;
+	background-size: 100% 50%;
 	font-size: 5vh;
     font-weight: bold;
     text-align: center;
@@ -40,14 +40,17 @@ body{
 #button{
     background-color: rgb(71, 149, 194);
     border: groove;
-    border-color: orangered;
+    border-color: darkorange;
     border-radius: 1vh;
+    font-size: 3vh;
+    font-weight: bold;
 }
 
 #box{
     border-style: ridge;
     border-color: gold;
     border-radius: 2vh;
+    border-width: 1vh;
     background-image: url(/image/elmo.gif);
     background-position: center;
     background-repeat: no-repeat;
