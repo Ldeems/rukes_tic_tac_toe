@@ -22,3 +22,35 @@ body{
     color: white;
     height: 25vh;
 }
+
+#input{
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1vh solid rgb(2, 82, 173);
+    border-radius: 2vh;
+    background-color: darkorange;
+    color: darkgreen;
+    font-size: 4vh;
+    font-weight: bold;
+    text-align: center;
+}
+
+#button{
+    background-color: rgb(71, 149, 194);
+    border: groove;
+    border-color: orangered;
+    border-radius: 1vh;
+}
+
+#box{
+    border-style: ridge;
+    border-color: gold;
+    border-radius: 2vh;
+    background-image: url(/image/elmo.gif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: black;
+    color: blue;
+}

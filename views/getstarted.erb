@@ -2,26 +2,27 @@
 
 Single player game<br>
 <form method="post" action="oneplayergame">
-    <input type="text" name="pname" placeholder="playername" required><br>
+    <input type="text" name="pname" placeholder="playername" id="input" required><br>
     <input type="radio" name="diff" value="easy" checked>easy<br>
     <input type="radio" name="diff" value="medium">medium<br>
     <input type="radio" name="diff" value="hard">hard<br>
     <br>
     Would you like to go first or second?<br>
-    <input type="submit" name="order" value="first">
-    <input type="submit" name="order" value="second">
+    <input type="submit" name="order" value="first" id="button">
+    <input type="submit" name="order" value="second" id="button">
 </form>
 <br>
 <br>
 Two player game<br>
 <form method="post" action="twoplayergame">
-    <input type="text" name="p1name" placeholder="player ones name" required><br>
+    <input type="text" name="p1name" placeholder="player ones name" id="input" required><br>
     <br>
-    <input type="text" name="p2name" placeholder="player twos name" rquired><br>
+    <input type="text" name="p2name" placeholder="player twos name" id="input" rquired><br>
     <br>
-    <input type="submit" name="get some" value="get some">
+    <input type="submit" name="get some" value="get some" id="button">
 </form>
 <br>
+<div id="box">
 Outcome of the past PvP fights<br>
 <% a = table()%>
 <%a.each do |b|%>
@@ -35,7 +36,8 @@ Outcome of the past PvP fights<br>
         <%count +=1%>
     <%end%>    
         <br>
-<%end%>    
+<%end%>
+</div>    
 
 
 
